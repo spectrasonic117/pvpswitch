@@ -2,6 +2,7 @@ package com.spectrasonic.pvpswitch;
 
 import com.spectrasonic.pvpswitch.Commands.PvPCommand;
 import com.spectrasonic.pvpswitch.Managers.PvPManager;
+import com.spectrasonic.pvpswitch.Utils.MessageUtils;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -15,12 +16,12 @@ public class Main extends JavaPlugin {
 
         registerCommands();
 
-        getLogger().info("PvPSwitch habilitado.");
+        MessageUtils.sendStartupMessage(this);
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("PvPSwitch deshabilitado.");
+        MessageUtils.sendShutdownMessage(this);
     }
 
     public void registerCommands() {
