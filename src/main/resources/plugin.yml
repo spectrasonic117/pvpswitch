@@ -1,0 +1,16 @@
+name: pvpswitch
+version: '${version}'
+main: com.spectrasonic.pvpswitch.Main
+api-version: '1.21'
+authors: [ Spectrasonic ]
+
+commands:
+  pvp:
+    description: Toggle PvP
+    usage: /pvp <on|off>
+    permission: pvpswitch.command.pvp
+
+permissions:
+  pvpswitch.command.pvp:
+    description: Allows the use of the /pvp command.
+    default: op
