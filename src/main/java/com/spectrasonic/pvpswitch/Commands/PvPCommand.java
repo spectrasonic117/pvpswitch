@@ -28,6 +28,7 @@ public class PvPCommand implements CommandExecutor, TabCompleter {
 
         if (args.length != 1) {
             SoundUtils.playerSound((Player) sender, Sound.BLOCK_NOTE_BLOCK_PLING, 1.0f, 1.0f);
+
             MessageUtils.sendMessage(sender, "&eUso: /pvp <on|off>");
             return false;
         }
@@ -35,12 +36,12 @@ public class PvPCommand implements CommandExecutor, TabCompleter {
         switch (args[0].toLowerCase()) {
             case "on", "true":
                 pvpManager.setPvP(true);
-                SoundUtils.playerSound((Player) sender, Sound.BLOCK_RESPAWN_ANCHOR_CHARGE, 1.0f, 1.0f);
+                SoundUtils.broadcastPlayerSound(Sound.BLOCK_RESPAWN_ANCHOR_CHARGE, 1.0f, 1.0f);
                 MessageUtils.sendMessage(sender, "&aPvP activado.");
                 break;
             case "off", "false":
                 pvpManager.setPvP(false);
-                SoundUtils.playerSound((Player) sender, Sound.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, 1.0f, 1.0f);
+                SoundUtils.broadcastPlayerSound(Sound.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, 1.0f, 1.0f);
                 MessageUtils.sendMessage(sender, "&cPvP desactivado.");
                 break;
             default:
